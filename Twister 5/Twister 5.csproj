@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Twister</AssemblyName>
+    <ApplicationIcon>icon4.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="OGLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="OpenTK\GLControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OpenTK\Documentation\" />
+    <Folder Include="OpenTK\Graphics\OpenGL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DisplacementRender.cs" />
+    <Compile Remove="ExcelFormula.cs" />
+    <Compile Remove="ExcelFormulaToken.cs" />
+    <Compile Remove="TestCube.cs" />
+    <Compile Remove="TestView.cs" />
+  </ItemGroup>
+</Project>
